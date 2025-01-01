@@ -1,6 +1,6 @@
 "use client";
 
-import { OnBoardingAction } from "@/actions/actions";
+import { OnBoardingAction } from "@/actions/onboardingActions";
 import {
   Card,
   CardContent,

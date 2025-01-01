@@ -36,8 +36,8 @@ export const dashboardLinks: navProps[] = [
   },
   {
     id: 2,
-    name: "Avalability",
-    href: "/dashboard/availablity",
+    name: "Availability",
+    href: "/dashboard/availability",
     icon: CalendarCheck2,
   },
   {

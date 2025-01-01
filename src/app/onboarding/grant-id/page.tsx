@@ -25,6 +25,7 @@ export default function GrantIdRoute() {
             src={workIsDone}
             alt='workIsDone'
             className='w-full rounded-lg'
+            priority
           />
         </CardHeader>
 

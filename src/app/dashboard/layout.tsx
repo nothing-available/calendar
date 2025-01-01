@@ -11,6 +11,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Toaster } from "@/components/ui/sonner";
 import { signOut } from "@/lib/auth";
 import prisma from "@/lib/db";
 import requireUser from "@/lib/hooks";
@@ -27,11 +28,16 @@ async function getData(userId: string) {
     },
     select: {
       userName: true,
+      grantID:true
     },
   });
 
   if (!data?.userName) {
     return redirect("/onboarding");
+  }
+
+  if(!data?.grantID){
+    return redirect("/onboarding/grant-id")
   }
 }
 
@@ -129,6 +135,7 @@ export default async function DashBoardLayout({
           </main>
         </div>
       </div>
+      <Toaster richColors closeButton/>
     </>
   );
 }

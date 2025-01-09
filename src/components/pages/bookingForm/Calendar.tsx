@@ -14,14 +14,14 @@ export function Calendar(
 ) {
   const { locale } = useLocale();
 
-  let state = useCalendarState({
+  const state = useCalendarState({
     ...props,
     visibleDuration: { months: 1 },
     locale,
     createCalendar,
   });
 
-  let { calendarProps, prevButtonProps, nextButtonProps, title } = useCalendar(
+  const { calendarProps, prevButtonProps, nextButtonProps } = useCalendar(
     props,
     state
   );
@@ -38,8 +38,10 @@ export function Calendar(
       />
 
       <div className='flex gap-8'>
-        <CalendarGrid state={state}
-        isDateUnavailable={props.isDateUnavailable} />
+        <CalendarGrid
+          state={state}
+          isDateUnavailable={props.isDateUnavailable}
+        />
       </div>
     </div>
   );

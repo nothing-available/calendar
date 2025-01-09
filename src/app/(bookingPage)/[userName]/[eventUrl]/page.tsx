@@ -1,5 +1,3 @@
-
-
 import { RenderCalendar } from "@/components/pages/bookingForm/RenderCalendar";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
@@ -102,7 +100,7 @@ export default async function BookingPageRoute({
             orientation='vertical'
             className='hidden md:block h-full w-[1px]'
           />
-          <RenderCalendar availability={data.User?.availability as any} />
+          <RenderCalendar daysofWeek={data.User?.availability} />
         </CardContent>
       </Card>
     </div>

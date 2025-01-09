@@ -5,18 +5,19 @@ import { Calendar } from "./Calendar";
 import { DateValue } from "@react-aria/calendar";
 
 interface iAppProps {
-  daysofWeek: {
-    day: string;
-    isActive: boolean;
-  }[];
+  daysofWeek: { day: string; isActive: boolean }[];
 }
 
 export function RenderCalendar({ daysofWeek }: iAppProps) {
+  
+  
+
+
   const isDateUnavailable = (date: DateValue) => {
-    const dayOfWeek = date.toDate(getLocalTimeZone()).getDate();
+    const dayOfWeek = date.toDate(getLocalTimeZone()).getDay();
     const adjustedIndex = dayOfWeek === 0 ? 6 : dayOfWeek - 1;
 
-    return !dayOfWeek[adjustedIndex].isActive;
+    return !daysofWeek[adjustedIndex].isActive;
   };
 
   return (

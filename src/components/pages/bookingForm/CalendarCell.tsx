@@ -20,8 +20,9 @@ export function CalendarCell({
   currentMonth: CalendarDate;
   isUnavailable?: boolean;
 }) {
-  let ref = useRef(null);
-  let { cellProps, buttonProps, isSelected, isDisabled, formattedDate } =
+  const ref = useRef(null);
+
+  const { cellProps, buttonProps, isSelected, isDisabled, formattedDate } =
     useCalendarCell({ date }, state, ref);
 
   const { focusProps, isFocusVisible } = useFocusRing();
@@ -44,6 +45,7 @@ export function CalendarCell({
         <div
           className={cn(
             "size-full rounded-sm flex items-center justify-center text-sm font-semibold",
+
             isSelected ? "bg-primary text-green-500" : "",
             finalIsDisabled ? "text-muted-foreground cursor-not-allowed" : "",
             !isSelected && !finalIsDisabled ? "bg-secondary" : ""

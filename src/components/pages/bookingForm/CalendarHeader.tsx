@@ -1,5 +1,5 @@
 import { type CalendarState } from "react-stately";
-import { FocusableElement, DOMAttributes } from "@react-types/shared";
+import type { DOMAttributes, FocusableElement } from "@react-types/shared";
 import { type AriaButtonProps } from "@react-aria/button";
 import { useDateFormatter } from "@react-aria/i18n";
 import { VisuallyHidden } from "@react-aria/visually-hidden";
@@ -33,7 +33,7 @@ export function CalendarHeader({
         <h2>{calendarProps["aria-label"]}</h2>
       </VisuallyHidden>
       <h2 className='font-semibold flex-1'>
-        {monthName}{" "}
+        {monthName}
         <span className='text-muted-foreground text-sm font-medium'>
           {year}
         </span>

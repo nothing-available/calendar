@@ -19,7 +19,8 @@ export function CalendarGrid({
 }) {
   const startDate = state.visibleRange.start.add(offset);
   const endDate = endOfMonth(startDate);
-  let { locale } = useLocale();
+  const { locale } = useLocale();
+
   const { gridProps, headerProps, weekDays } = useCalendarGrid(
     {
       startDate,
@@ -30,7 +31,7 @@ export function CalendarGrid({
   );
   const weeksInMonth = getWeeksInMonth(startDate, locale);
 
-  return (
+  return (  
     <table
       {...gridProps}
       cellPadding={0}

@@ -44,10 +44,22 @@ async function getData(eventUrl: string, userName: string) {
 
 export default async function BookingPageRoute({
   params,
+  searchParams,
 }: {
   params: { userName: string; eventUrl: string };
+  searchParams: { date?: string };
 }) {
   const data = await getData(params.eventUrl, params.userName);
+
+  const selectDate = searchParams.date
+    ? new Date(searchParams.date)
+    : new Date();
+
+  const formattedDate = new Intl.DateTimeFormat("en-US", {
+    weekday: "long",
+    day: "numeric",
+    month: "long",
+  }).format(selectDate);
 
   return (
     <div className='min-h-screen w-screen flex items-center justify-center'>
@@ -76,7 +88,7 @@ export default async function BookingPageRoute({
               <p className='flex items-center'>
                 <CalendarX2 className='size-4 mr-2 text-primary' />
                 <span className='text-sm font-medium text-muted-foreground'>
-                  24 dec 2012
+                  {formattedDate}
                 </span>
               </p>
 
@@ -100,7 +112,16 @@ export default async function BookingPageRoute({
             orientation='vertical'
             className='hidden md:block h-full w-[1px]'
           />
-          <RenderCalendar daysofWeek={data.User?.availability} />
+
+          <div className='my-4 md:my-0'>
+            <RenderCalendar daysofWeek={data.User?.availability} />
+          </div>
+
+          <Separator
+            orientation='vertical'
+            className='hidden md:block h-full w-[1px]'
+          />
+          
         </CardContent>
       </Card>
     </div>

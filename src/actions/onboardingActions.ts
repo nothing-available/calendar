@@ -38,37 +38,37 @@ export async function OnBoardingAction(prevState: any, formData: FormData) {
         createMany: {
           data: [
             {
-              day: "Monday",
+              day: "Mon",
               fromTime: "08:00",
               tillTime: "18:00",
             },
             {
-              day: "Tuesday",
+              day: "Tue",
               fromTime: "08:00",
               tillTime: "18:00",
             },
             {
-              day: "Wednesday",
+              day: "Wed",
               fromTime: "08:00",
               tillTime: "18:00",
             },
             {
-              day: "Thursday",
+              day: "Thu",
               fromTime: "08:00",
               tillTime: "18:00",
             },
             {
-              day: "Friday",
+              day: "Fri",
               fromTime: "08:00",
               tillTime: "18:00",
             },
             {
-              day: "Saturday",
+              day: "Sat",
               fromTime: "08:00",
               tillTime: "18:00",
             },
             {
-              day: "Sunday",
+              day: "Sun",
               fromTime: "08:00",
               tillTime: "18:00",
             },

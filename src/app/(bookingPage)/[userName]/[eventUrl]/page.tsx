@@ -1,4 +1,5 @@
 import { RenderCalendar } from "@/components/pages/bookingForm/RenderCalendar";
+import { TimeTable } from "@/components/pages/bookingForm/TimeTable";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import prisma from "@/lib/db";
@@ -121,7 +122,11 @@ export default async function BookingPageRoute({
             orientation='vertical'
             className='hidden md:block h-full w-[1px]'
           />
-          
+
+          <TimeTable
+            selectedDates={selectDate}
+            userName={params.userName}
+          />
         </CardContent>
       </Card>
     </div>

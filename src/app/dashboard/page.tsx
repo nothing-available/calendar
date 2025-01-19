@@ -60,7 +60,7 @@ export default async function Dashboard() {
           tittle='ma chuda'
           description='you have created the first event type by clicking button below'
           buttonText='behen ki chut'
-          href="'/maa/kaa/bhosra"
+          href="/maa/kaa/bhosra"
         />
       ) : (
         <>
